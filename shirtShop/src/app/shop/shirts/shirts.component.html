@@ -1,1 +1,9 @@
-<p>shirts works!</p>
+<div class="row">
+  <app-shirt
+    *ngFor="let item of shirts"
+    [shirt]="item"
+    (buyClicked)="buyClicked($event)"
+  ></app-shirt>
+</div>
+
+<h1 *ngIf="shirtBool">{{ clickedShirt.nom }}</h1>

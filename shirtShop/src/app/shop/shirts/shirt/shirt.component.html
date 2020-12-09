@@ -1,1 +1,29 @@
-<p>shirt works!</p>
+<div style="margin-right: 20px">
+  <div class="card" style="background-color: #efef43; border-color: darkblue">
+    <img
+      class="card-img-top"
+      src="{{ shirt.image }}"
+      alt="product"
+      style="width: 200px; height: 200px"
+    />
+    <div class="card-body">
+      <h4 class="card-title">{{ shirt.nom }}</h4>
+      <p class="card-text">{{ shirt.categorie }}</p>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <button
+              type="button"
+              class="btn btn-primary button-big"
+              (click)="buyClicked(shirt)"
+            >
+              Buy
+            </button>
+          </div>
+          <div class="col-md-3"></div>
+          <p class="card-text">{{ shirt.prix }} DT</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

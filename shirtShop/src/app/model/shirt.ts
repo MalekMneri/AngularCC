@@ -1,8 +1,7 @@
-import { NOMEM } from 'dns'
-
 export class Shirt {
-    ref: string;
+    id: number;
     nom: string;
-    price: number;
+    prix: number;
+    image: string;
     categorie: string;
 }
