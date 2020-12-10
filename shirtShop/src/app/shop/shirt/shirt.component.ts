@@ -1,4 +1,4 @@
-import { Shirt } from './../../../model/shirt';
+import { Shirt } from './../../model/shirt';
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Input } from '@angular/core';
 
@@ -9,6 +9,7 @@ import { Input } from '@angular/core';
 })
 export class ShirtComponent implements OnInit {
   @Input() shirt: Shirt;
+  @Input() categorie: string;
   @Output('buyClicked') buyClickedEvent = new EventEmitter<Shirt>();
   constructor() { }
 
@@ -17,6 +18,9 @@ export class ShirtComponent implements OnInit {
     this.buyClickedEvent.emit(shirt);
   }
   ngOnInit(): void {
+
+      this.categorie = this.shirt.categorie;
+
   }
 
 }

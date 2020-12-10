@@ -1,6 +1,53 @@
-<div class="container" style="margin-top: 70px">
+<div style="margin-top: 70px">
   <div class="row">
-    <div class="col-md-2 col-sm-2"><h3>Search</h3></div>
-    <div class="col-md-10 col-sm-7"><app-shirts></app-shirts></div>
+    <div class="pl-5 col-sm-3 mr-5">
+      <i
+        class="fa fa-search"
+        style="position: absolute; margin: 10px 0 0 280px"
+        aria-hidden="true"
+      ></i>
+      <input class="form-control" type="search" placeholder="Search" />
+      <br />
+      <h4>Categories :</h4>
+      <div
+        class="btn-group-vertical mt-3"
+        role="group"
+        aria-label="Basic example"
+      >
+        <button
+          type="button"
+          class="btn btn-secondary"
+          (click)="this.clickedCategorie = 'T-Shirt'"
+        >
+          T-Shirt
+        </button>
+        <button
+          type="button"
+          class="btn btn-secondary"
+          (click)="this.clickedCategorie = 'Long Sleeves'"
+        >
+          Long Sleeves
+        </button>
+        <button
+          type="button"
+          class="btn btn-secondary"
+          (click)="this.clickedCategorie = 'Shirt'"
+        >
+          Shirt
+        </button>
+      </div>
+    </div>
+    <div class="col-md-8 col-sm-7">
+      <div class="row">
+        <app-shirt
+          *ngFor="let item of shirts"
+          [shirt]="item"
+          [categorie]="clickedCategorie"
+          (buyClicked)="buyClicked($event)"
+        ></app-shirt>
+      </div>
+
+      <h1 *ngIf="shirtBool">{{ clickedShirt.nom }}</h1>
+    </div>
   </div>
 </div>
