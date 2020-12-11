@@ -18,6 +18,9 @@ export class CRUDService {
 getshirts(): Observable<Shirt[]>{
 return this.http.get<Shirt[]>(this.shirtsUrl);
 }
+getOrders(): Observable<Order[]>{
+return this.http.get<Order[]>(this.ordersUrl);
+}
  addOrder (order: Order): Observable<Order> {
     return this.http.post<Order>(this.ordersUrl, order, this.httpOptions);}
 

@@ -1,3 +1,4 @@
+import { OrdersComponent } from './orders/orders.component';
 import { OrderComponent } from './order/order.component';
 import { ShopComponent } from './shop/shop.component';
 import { HomeComponent } from './home/home.component';
@@ -7,7 +8,7 @@ import { Routes, RouterModule } from '@angular/router';
 const routes: Routes = [
   {path: 'home', component: HomeComponent},
   {path: 'shop', component: ShopComponent},
-  {path: 'order', component: OrderComponent},
+  {path: 'orders', component: OrdersComponent},
   {path: 'order/:id', component: OrderComponent},
   {path: '**', redirectTo: 'home' ,pathMatch: 'full'}
 ];

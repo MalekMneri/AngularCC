@@ -15,7 +15,7 @@
    
   ],
   "orders": [
-   {"shirtId": 1, "nom": "malek", "prenom": "mneri", "numtel": 96681004, "addresse": "mourouj III", "qte": 2 }
+   {"shirtNom": "maryoul1", "nom": "malek", "prenom": "mneri", "numtel": 96681004, "addresse": "mourouj III", "qte": 2 }
    
   ],
   "profile": {

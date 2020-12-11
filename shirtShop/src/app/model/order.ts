@@ -1,5 +1,5 @@
 export class Order {
-    shirtId: number;
+    shirtNom: string;
     nom: string;
     prenom: string;
     numtel: number;

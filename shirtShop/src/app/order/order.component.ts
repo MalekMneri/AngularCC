@@ -22,7 +22,6 @@ export class OrderComponent implements OnInit {
 
   ngOnInit(): void {
     let id = +this.currentRoute.snapshot.paramMap.get('id');
-    this.order.shirtId = id;
     this.sCRUD.getshirts().subscribe((data) => { this.shirt = data.find((s) => {return s.id === id;});}
       );
   }
@@ -32,6 +31,7 @@ export class OrderComponent implements OnInit {
   onSubmit(){
     console.log(this.orderForm);
     this.order = this.orderForm.form.value; 
+    this.order.shirtNom = this.shirt.nom;
     this.sCRUD.addOrder(this.order);
     console.log(this.order);
     this.submitted = true;

@@ -1,3 +1,5 @@
+import { Order } from './../model/order';
+import { CRUDService } from './../shared/shirtsCRUD.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,10 +8,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./orders.component.css']
 })
 export class OrdersComponent implements OnInit {
+  orders: Order[];
 
-  constructor() { }
+  constructor(private sCRUD: CRUDService) { }
 
   ngOnInit(): void {
+     this.sCRUD.getOrders().subscribe((data) => {this.orders = data;
+      console.log(data);}
+      );
   }
 
 }
