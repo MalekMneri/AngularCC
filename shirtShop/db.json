@@ -14,6 +14,10 @@
    {"id": 12,"nom": "maryoul3","prix": 1,"image": "https://images.vans.com/is/image/Vans/IVFATJ-HERO?$583x583$","categorie": "t-shirt"}
    
   ],
+  "orders": [
+   {"shirtId": 1, "nom": "malek", "prenom": "mneri", "numtel": 96681004, "addresse": "mourouj III", "qte": 2 }
+   
+  ],
   "profile": {
     "name": "typicode"
   }

@@ -19,7 +19,6 @@ export class ShopComponent implements OnInit {
       this.sCRUD.getshirts().subscribe((data) => {this.shirts = data;
       console.log(data);}
       );
-      console.log(this.shirts);
   }
   buyClicked(shirt: Shirt){
     this.clickedShirt = shirt;

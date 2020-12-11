@@ -8,7 +8,10 @@ import { HeaderComponent } from './header/header.component';
 import { ShirtComponent } from './shop/shirt/shirt.component';
 import { HomeComponent } from './home/home.component';
 import { ShopComponent } from './shop/shop.component';
-import { OrderComponent } from './shop/order/order.component';
+import { OrderComponent } from './order/order.component';
+import { FormsModule } from '@angular/forms';
+import { OrdersComponent } from './orders/orders.component';
+import { OrderEditComponent } from './order-edit/order-edit.component';
 
 @NgModule({
   declarations: [
@@ -17,12 +20,15 @@ import { OrderComponent } from './shop/order/order.component';
     ShirtComponent,
     HomeComponent,
     ShopComponent,
-    OrderComponent
+    OrderComponent,
+    OrdersComponent,
+    OrderEditComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule 
   ],
   providers: [],
   bootstrap: [AppComponent]
