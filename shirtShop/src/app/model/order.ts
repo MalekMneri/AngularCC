@@ -1,4 +1,6 @@
 export class Order {
+    id: string;
+    shirtId: string;
     shirtNom: string;
     nom: string;
     prenom: string;

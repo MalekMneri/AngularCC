@@ -1,3 +1,4 @@
+import { Router, ActivatedRoute } from '@angular/router';
 import { Order } from './../model/order';
 import { CRUDService } from './../shared/shirtsCRUD.service';
 import { Component, OnInit } from '@angular/core';
@@ -10,12 +11,19 @@ import { Component, OnInit } from '@angular/core';
 export class OrdersComponent implements OnInit {
   orders: Order[];
 
-  constructor(private sCRUD: CRUDService) { }
+  constructor(private sCRUD: CRUDService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-     this.sCRUD.getOrders().subscribe((data) => {this.orders = data;
-      console.log(data);}
+     this.sCRUD.getOrders().subscribe((data) => {this.orders = data;}
       );
+  }
+  onDelete(id: string){
+    this.sCRUD.deleteOrder(id).subscribe(() => {console.log('deleted id: ',id);});
+    window.location.reload();
+  }
+  onUpdate(id: string){
+
+    this.router.navigate(['orderEdit/',id]);
   }
 
 }

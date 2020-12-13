@@ -1,4 +1,6 @@
 <div class="container mt-5">
+  <h2 class="display-4">My Orders :</h2>
+  <br />
   <div *ngFor="let item of orders" class="card text-left">
     <div class="card-body">
       <h4 class="card-title">{{ item.shirtNom }}</h4>
@@ -9,8 +11,16 @@
         <div class="col-6">
           <p class="card-text">adresse: {{ item.addresse }}</p>
         </div>
-        <div class="col-1"><button>Edit</button></div>
-        <div class="col-2"><button>Delete</button></div>
+        <div class="col-1">
+          <button class="btn btn-primary" (click)="onUpdate(item.id)">
+            Edit
+          </button>
+        </div>
+        <div class="col-2">
+          <button class="btn btn-danger" (click)="onDelete(item.id)">
+            Delete
+          </button>
+        </div>
       </div>
     </div>
   </div>

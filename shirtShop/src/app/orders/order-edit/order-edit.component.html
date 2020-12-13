@@ -1,0 +1,70 @@
+<div class="container mt-5">
+  <h1 class="display-4">Edit order</h1>
+  <form #myForm="ngForm">
+    <div>
+      <div class="form-group">
+        <label for="nom">Your Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="nom"
+          value="{{ oldOrder.nom }}"
+          ngModel
+          name="nom"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label for="prenom">Your Surname</label>
+        <input
+          id="prenom"
+          type="text"
+          class="form-control"
+          value="{{ oldOrder.prenom }}"
+          ngModel
+          name="prenom"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label for="numtel">Phone Number</label>
+        <input
+          id="numtel"
+          type="number"
+          class="form-control"
+          value="{{ oldOrder.numtel }}"
+          ngModel
+          name="numtel"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label for="addresse">Home Address</label>
+        <input
+          type="text"
+          id="addresse"
+          class="form-control"
+          value="{{ oldOrder.addresse }}"
+          ngModel
+          name="addresse"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label for="qte">How many shirts</label>
+        <input
+          id="qte"
+          type="number"
+          class="form-control"
+          value="{{ oldOrder.qte }}"
+          ngModel
+          name="qte"
+          required
+        />
+      </div>
+    </div>
+    <button [disabled]="!myForm.valid" class="btn btn-primary" type="submit">
+      Submit
+    </button>
+  </form>
+</div>

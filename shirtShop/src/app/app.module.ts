@@ -1,7 +1,6 @@
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -11,7 +10,10 @@ import { ShopComponent } from './shop/shop.component';
 import { OrderComponent } from './order/order.component';
 import { FormsModule } from '@angular/forms';
 import { OrdersComponent } from './orders/orders.component';
-import { OrderEditComponent } from './order-edit/order-edit.component';
+import { OrderEditComponent } from './orders/order-edit/order-edit.component';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FilterComponent } from './shop/filter/filter.component';
 
 @NgModule({
   declarations: [
@@ -22,13 +24,17 @@ import { OrderEditComponent } from './order-edit/order-edit.component';
     ShopComponent,
     OrderComponent,
     OrdersComponent,
-    OrderEditComponent
+    OrderEditComponent,
+    FilterComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule 
+    FormsModule,
+    MatPaginatorModule,
+    BrowserAnimationsModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

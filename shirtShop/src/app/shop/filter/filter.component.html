@@ -1,0 +1,32 @@
+<i
+  class="fa fa-search"
+  style="position: absolute; margin: 10px 0 0 280px"
+  aria-hidden="true"
+></i>
+<input
+  class="form-control"
+  type="search"
+  placeholder="Search"
+  [(ngModel)]="searchValue"
+  (input)="onsearch()"
+/>
+<br />
+<h4 class="display-4">Categories :</h4>
+<div class="btn-group-vertical mt-3" role="group" aria-label="Basic example">
+  <button type="button" class="btn btn-secondary" (click)="onFilter('all')">
+    All Shirts
+  </button>
+  <button type="button" class="btn btn-secondary" (click)="onFilter('T-Shirt')">
+    T-Shirt
+  </button>
+  <button
+    type="button"
+    class="btn btn-secondary"
+    (click)="onFilter('Long Sleeves')"
+  >
+    Long Sleeves
+  </button>
+  <button type="button" class="btn btn-secondary" (click)="onFilter('Shirt')">
+    Shirt
+  </button>
+</div>

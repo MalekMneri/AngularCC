@@ -1,5 +1,5 @@
 export class Shirt {
-    id: number;
+    id: string;
     nom: string;
     prenom: string;
     prix: number;
