@@ -1,5 +1,5 @@
 <div style="margin: 0 20px 20px 0" *ngIf="shirt.categorie == categorie">
-  <div class="card" style="background-color: #efef43">
+  <div class="card" style="background-color: #efef43" hoverDirective>
     <img
       class="card-img-top"
       src="{{ shirt.image }}"
@@ -7,7 +7,17 @@
       style="width: 200px; height: 200px"
     />
     <div class="card-body">
-      <h4 class="card-title">{{ shirt.nom }}</h4>
+      <h4
+        class="card-title"
+        style="
+          width: 100px;
+          height: 50px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        "
+      >
+        {{ shirt.nom }}
+      </h4>
       <p class="card-text">{{ shirt.categorie }}</p>
 
       <div class="row">

@@ -1,9 +1,9 @@
+<h1 [style.text-align]="'center'" class="display-1 mt-4">My Orders :</h1>
 <div class="container mt-5">
-  <h2 class="display-4">My Orders :</h2>
   <br />
-  <div *ngFor="let item of orders" class="card text-left">
+  <div *ngFor="let item of orders" class="card text-left mb-3">
     <div class="card-body">
-      <h4 class="card-title">{{ item.shirtNom }}</h4>
+      <h4 class="card-title">{{ item.qte }} * {{ item.shirtNom }}</h4>
       <div class="row">
         <div class="col-3">
           <p class="card-text">{{ item.nom }} {{ item.prenom }}</p>

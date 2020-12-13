@@ -29,7 +29,7 @@ export class OrderComponent implements OnInit {
     console.log('parametre',form.value);  
     this.order = <Order>form.value;
     this.order.shirtNom = this.shirt.nom;
-    this.order.id = '0';
+    //this.order.id = '0';
     this.order.shirtId = this.shirt.id;
     this.sCRUD.addOrder(this.order)
       .subscribe(() => {

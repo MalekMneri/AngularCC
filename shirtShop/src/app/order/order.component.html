@@ -61,11 +61,7 @@
             />
           </div>
         </div>
-        <div
-          class="alert alert-danger"
-          role="alert"
-          *ngIf="!myForm.valid && submitted"
-        >
+        <div class="alert alert-danger" role="alert" *ngIf="!myForm.valid">
           Order details invalid !
         </div>
         <button

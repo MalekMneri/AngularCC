@@ -14,6 +14,7 @@ import { OrderEditComponent } from './orders/order-edit/order-edit.component';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FilterComponent } from './shop/filter/filter.component';
+import { HoverDirective } from './shared/hover.directive';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { FilterComponent } from './shop/filter/filter.component';
     OrderComponent,
     OrdersComponent,
     OrderEditComponent,
-    FilterComponent
+    FilterComponent,
+    HoverDirective
   ],
   imports: [
     BrowserModule,
