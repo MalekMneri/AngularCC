@@ -30,14 +30,16 @@ getorderById(id: string): Observable<Order>{
   return this.http.get<Order>(this.ordersUrl+'/'+id);
 }
 getOrders(): Observable<Order[]>{
-  console.log(this.http.get<Order[]>(this.ordersUrl));
+  //console.log(this.http.get<Order[]>(this.ordersUrl));
   return this.http.get<Order[]>(this.ordersUrl);
 }
 addOrder (order: Order): Observable<Order> {
-  console.log(order);
+ // console.log(order);
   return this.http.post<Order>(this.ordersUrl,order);
-  
   }
+  updateOrder(id:string, newOrder:Order): Observable<Order>{
+return this.http.put<Order>(this.ordersUrl+'/'+ id, newOrder); }
+
 deleteOrder (id: string): Observable<Order> {
   return this.http.delete<Order>(this.ordersUrl+'/'+id);
 }

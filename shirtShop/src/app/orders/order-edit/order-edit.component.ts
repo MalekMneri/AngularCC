@@ -1,25 +1,55 @@
-import { Order } from './../../model/order';
+import { Shirt } from './../../model/shirt';
 import { CRUDService } from './../../shared/shirtsCRUD.service';
-import { ActivatedRoute } from '@angular/router';
-import { Component, OnChanges, OnInit, SimpleChanges, ViewChild } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Component,OnInit } from '@angular/core';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Order } from 'src/app/model/order';
+
 
 @Component({
   selector: 'app-order-edit',
   templateUrl: './order-edit.component.html',
   styleUrls: ['./order-edit.component.css']
 })
-export class OrderEditComponent implements OnInit,OnChanges {
-  @ViewChild('myForm',{static: true}) orderForm: NgForm;
+export class OrderEditComponent implements OnInit {
+  orderEditForm: FormGroup;
+  fbuilder: FormBuilder =  new FormBuilder();
   oldOrder: Order;
   newOrder: Order;
-  constructor(private currentRoute: ActivatedRoute, private sCRUD: CRUDService) { }
+  shirt: Shirt;
 
-  ngOnInit(): void {
-    let id = this.currentRoute.snapshot.paramMap.get('id');
-    console.log(id);
-    this.sCRUD.getorderById(id).subscribe((data) => console.log(data));
-    console.log(this.oldOrder);
+  constructor(private currentRoute: ActivatedRoute, private sCRUD: CRUDService,private router: Router) { }
+  
+  ngOnInit(){
+     let id = this.currentRoute.snapshot.paramMap.get('id');
+     let shirtId: string; 
+    this.sCRUD.getorderById(id).subscribe((data) => {
+      this.oldOrder = data;
+      shirtId = data.shirtId;
+    });
+    
+    this.sCRUD.getshirtById(shirtId).subscribe((data) => this.shirt= data);
+
+    this.orderEditForm = this.fbuilder.group({
+      nom : ['',Validators.required],
+      prenom : ['',Validators.required],
+      addresse :  ['',Validators.required],
+      numtel : ['',[Validators.required, Validators.pattern("[0-9]{8}")]],
+      qte : ['0',[Validators.required, Validators.pattern("[1-9]+")]]
+    });
   }
+  onSubmit(){
+    console.log(this.orderEditForm.value);
+    this.newOrder = this.orderEditForm.value;
+    this.newOrder.shirtNom = this.oldOrder.shirtNom;
+    this.newOrder.shirtId = this.oldOrder.shirtId;
+    this.sCRUD.updateOrder(this.oldOrder.id,this.orderEditForm.value).subscribe();
+    this.router.navigate(['/myOrders']);
+
+  }
+  onShowOldValues(){
+    this.orderEditForm.setValue(this.oldOrder);
+  }
+
 
 }

@@ -1,70 +1,51 @@
-<div class="container mt-5">
-  <h1 class="display-4">Edit order</h1>
-  <form #myForm="ngForm">
-    <div>
-      <div class="form-group">
-        <label for="nom">Your Name</label>
-        <input
-          type="text"
-          class="form-control"
-          id="nom"
-          value="{{ oldOrder.nom }}"
-          ngModel
-          name="nom"
-          required
-        />
-      </div>
-      <div class="form-group">
-        <label for="prenom">Your Surname</label>
-        <input
-          id="prenom"
-          type="text"
-          class="form-control"
-          value="{{ oldOrder.prenom }}"
-          ngModel
-          name="prenom"
-          required
-        />
-      </div>
-      <div class="form-group">
-        <label for="numtel">Phone Number</label>
-        <input
-          id="numtel"
-          type="number"
-          class="form-control"
-          value="{{ oldOrder.numtel }}"
-          ngModel
-          name="numtel"
-          required
-        />
-      </div>
-      <div class="form-group">
-        <label for="addresse">Home Address</label>
-        <input
-          type="text"
-          id="addresse"
-          class="form-control"
-          value="{{ oldOrder.addresse }}"
-          ngModel
-          name="addresse"
-          required
-        />
-      </div>
-      <div class="form-group">
-        <label for="qte">How many shirts</label>
-        <input
-          id="qte"
-          type="number"
-          class="form-control"
-          value="{{ oldOrder.qte }}"
-          ngModel
-          name="qte"
-          required
-        />
-      </div>
+<div class="container mt-3">
+  <h1 class="display-3">Edit Order details :</h1>
+  <form [formGroup]="orderEditForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="nom">Your Name</label>
+      <input type="text" id="nom" formControlName="nom" class="form-control" />
+
+      <label for="prenom">Your Surname</label>
+      <input
+        type="text"
+        id="prenom"
+        formControlName="prenom"
+        class="form-control"
+      />
+
+      <label for="addresse">Delivery address</label>
+      <input
+        type="text"
+        id="addresse"
+        formControlName="addresse"
+        class="form-control"
+      />
+
+      <label for="numtel">Phone number</label>
+      <input
+        type="text"
+        id="numtel"
+        formControlName="numtel"
+        class="form-control"
+      />
+
+      <label for="qte">Hom many shirts</label>
+      <input type="text" id="qte" formControlName="qte" class="form-control" />
+
+      <button
+        class="btn btn-primary mr-2 mt-3"
+        type="submit"
+        [disabled]="!orderEditForm.valid"
+      >
+        Confirm edit
+      </button>
+      <button
+        class="btn btn-dark mt-3"
+        type="button"
+        (click)="onShowOldValues()"
+      >
+        Show old Values
+      </button>
     </div>
-    <button [disabled]="!myForm.valid" class="btn btn-primary" type="submit">
-      Submit
-    </button>
   </form>
 </div>

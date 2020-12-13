@@ -87,24 +87,14 @@
   ],
   "orders": [
     {
-      "id": "2",
-      "shirtId": "1",
-      "shirtNom": "maryoul2",
       "nom": "malek",
       "prenom": "mneri",
       "numtel": 96681004,
-      "addresse": "mourouj III",
-      "qte": 2
-    },
-    {
-      "shirtId": "1",
-      "shirtNom": "maryoul4",
-      "nom": "malek",
-      "prenom": "mneri",
-      "numtel": 96681004,
-      "addresse": "mourouj III",
+      "addresse": "Mourouj 3",
       "qte": 2,
-      "id": "2od4-4E"
+      "shirtNom": "maryoul1",
+      "id": "0",
+      "shirtId": 1
     }
   ]
 }

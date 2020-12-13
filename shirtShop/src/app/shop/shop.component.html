@@ -16,16 +16,17 @@
           "
           (buyClicked)="buyClicked($event)"
         ></app-shirt>
-      </div>
 
-      <h1 *ngIf="shirtBool">{{ clickedShirt.nom }}</h1>
-      <mat-paginator
-        [length]="shirtsLength"
-        [pageSize]="3"
-        [pageSizeOptions]="[2, 4, 6]"
-        (page)="OnPageChange($event)"
-      >
-      </mat-paginator>
+        <h1 *ngIf="shirtBool">{{ clickedShirt.nom }}</h1>
+        <mat-paginator
+          style="width: 100%"
+          [length]="shirtsLength"
+          [pageSize]="3"
+          [pageSizeOptions]="[2, 4, 6]"
+          (page)="OnPageChange($event)"
+        >
+        </mat-paginator>
+      </div>
     </div>
   </div>
 </div>
